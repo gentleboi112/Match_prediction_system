@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0d1722">
+  <title>A.Y Prediction System — Premier League predictions</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="shell">
+    <header class="topbar">
+      <div class="brand"><div class="brandmark">A.Y</div><div>A.Y Prediction System<small>PREMIER LEAGUE</small></div></div>
+      <nav class="nav"><a class="active" href="#matches">Predictions</a><a href="#table">League table</a><a href="#insights">Insights</a></nav>
+      <div class="topright"><span class="season"><i class="live-dot"></i>2026/27 Season</span></div>
+    </header>
+    <main>
+      <section class="hero"><div><div class="eyebrow">The numbers behind the game</div><h1>Match predictions</h1><p>Premier League forecasts, powered by form, fixtures and the finer details.</p></div><div class="date-nav"><button aria-label="Previous matchweek">‹</button><button class="today">Matchweek 10 · Oct 31 – Nov 2</button><button aria-label="Next matchweek">›</button></div></section>
+      <section class="predictor" aria-labelledby="predict-title">
+        <div class="predictor-head"><div><h2 id="predict-title">Predict any Premier League match</h2><p>Choose two clubs, then add historical match results to power the forecast.</p></div><label class="upload-label">＋ Upload results CSV<input type="file" id="historyFile" accept=".csv,text/csv"></label></div>
+        <div class="predictor-controls"><div class="pickfield"><label for="homeClub">HOME CLUB</label><select id="homeClub"></select></div><div class="swap">VS</div><div class="pickfield"><label for="awayClub">AWAY CLUB</label><select id="awayClub"></select></div><button class="predict-btn" id="predictBtn">Predict match</button></div>
+        <div class="predict-result" id="predictResult" aria-live="polite"></div>
+        <div class="data-status" id="dataStatus">No historical file loaded. CSV columns: <code>home_team, away_team, home_goals, away_goals</code> (also accepts HomeTeam/AwayTeam/FTHG/FTAG). <a href="#" id="templateLink" style="color:var(--lime)">Download CSV template</a>.</div>
+      </section>
+      <div class="content">
+        <section class="maincol" id="matches">
+          <article class="feature">
+            <div class="featuretop"><span>Featured prediction · Saturday, 12:30</span><span class="badge">✦ MODEL PICK</span></div>
+            <div class="featuredmatch">
+              <div class="club"><div class="crest">ARS</div><div><div class="clubname">Arsenal</div><div class="clubform">FORM <b>W W D W W</b></div></div></div>
+              <div class="vs"><time>31 OCT</time><span class="kick">Emirates Stadium</span><small>VS</small></div>
+              <div class="club away"><div class="crest">LIV</div><div><div class="clubname">Liverpool</div><div class="clubform">FORM <b>W D W W L</b></div></div></div>
+            </div>
+            <div class="probstrip"></div>
+            <div class="outcomes"><div><strong>42%</strong><span>Arsenal win</span></div><div><strong>25%</strong><span>Draw</span></div><div><strong>33%</strong><span>Liverpool win</span></div></div>
+            <div class="featurefoot"><span>Model confidence <b>Medium · 72%</b></span><span>Expected goals <b>1.6 — 1.3</b></span></div>
+          </article>
+          <div class="sectionhead"><div><h2>All fixtures</h2><p>Predictions for this matchweek</p></div><select class="filter" id="teamFilter" aria-label="Filter by team"><option value="all">All matches</option><option>Arsenal</option><option>Liverpool</option><option>Manchester City</option><option>Chelsea</option><option>Tottenham</option><option>Manchester United</option><option>Aston Villa</option><option>Newcastle</option></select></div>
+          <div class="matchlist" id="matchList"></div>
+        </section>
+        <aside class="side">
+          <section class="card" id="table"><div class="cardtitle"><h3>League snapshot</h3><a href="#table">Full table ↗</a></div><div class="standhead"><span>#</span><span>Club</span><span>GD</span><span>PTS</span></div><div id="standings"></div></section>
+          <section class="card"><div class="cardtitle"><h3>Model form</h3><span class="badge">LAST 20</span></div><div class="statlist"><div><div class="statrow"><span>Result accuracy</span><b>68%</b></div><div class="progress"><i style="width:68%"></i></div></div><div><div class="statrow"><span>Correct score band</span><b>81%</b></div><div class="progress"><i style="width:81%"></i></div></div><div><div class="statrow"><span>Over / under 2.5</span><b>74%</b></div><div class="progress"><i style="width:74%"></i></div></div></div></section>
+          <section class="card insight" id="insights"><div class="spark">✳</div><h3>One to watch</h3><p><b>Manchester City</b> have scored in 16 straight league home games. Their forecast gives them a <b>64%</b> chance of beating Bournemouth.</p></section>
+        </aside>
+      </div>
+    </main>
+    <footer><span class="footnote">Predictions are estimates, not guarantees. Fixtures, forecasts and table figures shown here are illustrative demo data.</span><span>Made for the love of the game · PL only</span></footer>
+  </div>
+  <script src="script.js" defer></script>
+</body>
+</html>
